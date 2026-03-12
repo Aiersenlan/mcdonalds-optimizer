@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麥當勞最佳化點餐</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="logo">
+            <span class="m-icon">M</span>
+            <h1>麥當勞最佳化點餐</h1>
+        </div>
+        <button id="themeToggleBtn" style="position:absolute; top: 1.5rem; right: 1.5rem; background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-main); padding: 8px 16px; border-radius: 20px; cursor: pointer; font-weight: 700; box-shadow: var(--shadow-soft); transition: var(--transition); z-index: 10;">🌙 深色模式</button>
+        <p class="subtitle">聰明點餐，省錢吃飽飽！自動幫你湊 1+1星級點、甜心卡與套餐優惠。</p>
+    </header>
+
+    <main class="app-main">
+        <section class="menu-section">
+            <div class="category-tabs" id="categoryTabs">
+                <button class="tab-btn active" data-category="mains">主餐漢堡</button>
+                <button class="tab-btn" data-category="sides">點心/配餐</button>
+                <button class="tab-btn" data-category="drinks">冷熱飲料</button>
+                
+                <div class="filter-options" style="margin-left:auto; display:flex; align-items:center;">
+                    <label class="filter-label">
+                        <input type="checkbox" id="noBeefCheckbox" style="width:16px;height:16px;cursor:pointer;accent-color:var(--m-red);"> 不吃牛
+                    </label>
+                </div>
+            </div>
+            
+            <div class="menu-grid" id="menuGrid">
+                <!-- Items dynamically injected here -->
+            </div>
+        </section>
+
+        <aside class="cart-section">
+            <div class="cart-header">
+                <h2>🍔 我的餐點清單</h2>
+                <button id="clearCartBtn" class="clear-btn">清空</button>
+            </div>
+            
+            <div class="cart-items" id="cartItems">
+                <div class="empty-state">目前尚未選擇任何餐點</div>
+            </div>
+
+            <div class="cart-summary">
+                <div class="summary-line">
+                    <span>原價：</span>
+                    <span id="originalPrice" class="strike-through">$0</span>
+                </div>
+                <div class="summary-line nutrition-line">
+                    <span>熱量估計：</span>
+                    <span id="totalCalories">0 kcal</span>
+                </div>
+            </div>
+
+            <!-- New Coupons Panel -->
+            <div class="coupons-panel">
+                <h4>🎟️ 我的優惠券 / 折扣夾</h4>
+                <div class="coupon-toggles">
+                    <label class="toggle-label">
+                        <input type="checkbox" id="toggleSweetheart" checked>
+                        <span>甜心卡 (買A送B)</span>
+                    </label>
+                    <label class="toggle-label">
+                        <input type="checkbox" id="togglePromos2026" checked>
+                        <span>2026 期間限定 (買一送一/99元組合)</span>
+                    </label>
+                    <label class="toggle-label">
+                        <input type="checkbox" id="toggleAppCoupon">
+                        <span>📱 麥當勞 APP 獨立優惠券</span>
+                    </label>
+                </div>
+                
+                <div class="app-coupon-config" id="appCouponConfig" style="display: none;">
+                    <p class="config-desc">請設定您 APP 抽到的優惠：</p>
+                    <div class="config-row">
+                        <select id="appCouponType">
+                            <option value="discount">單品現折 $X 元</option>
+                            <option value="buy_one_get_one">單品買一送一</option>
+                            <option value="free_item_with_meal" disabled>買套餐送單品 (即將推出)</option>
+                        </select>
+                    </div>
+                    <div class="config-row">
+                        <select id="appCouponTargetItem">
+                            <option value="">-- 請選擇指定餐點 --</option>
+                            <!-- Dynamically populated from JS -->
+                        </select>
+                    </div>
+                    <div class="config-row" id="discountValueRow">
+                        <span>現折金額 $</span>
+                        <input type="number" id="appCouponDiscount" min="1" max="100" value="10" style="width: 60px;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="optimal-strategy-panel">
+                <div class="panel-header">
+                    <h3 class="panel-title">👑 最划算點餐法</h3>
+                    <div class="savings-row">
+                        <span id="discountRate" class="discount-badge"></span>
+                        <span class="savings-text">省下 <span id="moneySaved">0</span> 元</span>
+                    </div>
+                    <div class="stats-row" id="statsRow">
+                        已計算 <span id="comboCount">0</span> 種組合
+                    </div>
+                </div>
+                <div class="strategy-list" id="strategyList">
+                    <p class="empty-strategy">請先加入餐點，我會幫您算出最便宜的點法！</p>
+                </div>
+                <div class="final-total">
+                    <span>最佳總金額</span>
+                    <span id="bestTotalPrice" class="highlight-price">$0</span>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <script src="app.js?v=card-fix"></script>
+</body>
+</html>
