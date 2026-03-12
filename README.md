@@ -3,6 +3,8 @@
 A high-performance web application designed to find the most cost-effective combination for McDonald's orders using dynamic programming. Specifically tuned for the 2026 Taiwan market.  
 這是一個高效能的 Web 應用程式，利用動態規劃（Dynamic Programming）演算法，為您的麥當勞訂單尋找最省錢的組合。特別針對 2026 台灣市場進行優化。
 
+**🌐 Live Demo | 線上試用**: [https://mcdonalds-optimizer.onrender.com/](https://mcdonalds-optimizer.onrender.com/)
+
 ![Premium UI](./screenshots/final_ui.png)
 
 ## ✨ Features | 功能亮點
