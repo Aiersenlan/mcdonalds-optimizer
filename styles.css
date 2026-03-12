@@ -156,24 +156,26 @@ body {
 /* Category Tabs */
 .category-tabs {
     display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    overflow-x: auto;
-    padding-bottom: 8px;
+    gap: 12px;
+    margin-bottom: 24px;
+    background: var(--card-bg);
+    padding: 8px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-soft);
 }
 
 .tab-btn {
-    background: var(--card-bg);
-    border: 2px solid transparent;
-    padding: 0.75rem 1.5rem;
-    border-radius: 30px;
-    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
     font-weight: 700;
     cursor: pointer;
-    color: var(--text-muted);
+    border-radius: 12px;
     transition: var(--transition);
-    box-shadow: var(--shadow-soft);
     white-space: nowrap;
+    box-shadow: var(--shadow-soft);
 }
 
 .tab-btn:hover {
@@ -661,25 +663,31 @@ body {
     color: var(--text-muted);
 }
 
-.config-row {
+.item-controls {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
-.config-row select, .config-row input {
-    flex: 1;
-    padding: 8px 12px;
-    border-radius: 8px;
+.control-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
     border: 1px solid var(--border-color);
-    background: var(--config-input-bg);
+    background: var(--bg-color);
     color: var(--text-main);
-    font-size: 0.9rem;
-    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1.2rem;
 }
 
-.config-row select:focus, .config-row input:focus {
-    border-color: var(--m-red);
+.control-btn:active {
+    transform: scale(0.9);
+    background: var(--m-red);
+    color: white;
 }
 @media (max-width: 600px) {
     .app-header {
@@ -695,16 +703,43 @@ body {
         width: 100%;
     }
 
+    .category-tabs {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 12px;
+        margin-bottom: 16px;
+        border-radius: 0;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        border-left: none;
+        border-right: none;
+        scrollbar-width: none; /* Hide scrollbar Firefox */
+    }
+    
+    .category-tabs::-webkit-scrollbar {
+        display: none; /* Hide scrollbar Chrome/Safari */
+    }
+
     .tabs-container {
         flex-direction: column;
         align-items: stretch;
     }
 
+    .filter-options {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
     .filter-label {
-        border-left: none;
-        padding: 10px 0;
-        justify-content: center;
-        border-top: 1px solid var(--border-color);
+        border-top: none;
+        padding: 8px 12px;
+        background: var(--card-bg);
+        border-radius: 20px;
+        border: 1px solid var(--border-color);
+        width: fit-content;
+        margin: 0 auto;
     }
 
     .menu-grid {
@@ -716,29 +751,45 @@ body {
         padding: 1rem;
     }
 
+    /* Thumb Friendly Controls */
+    .control-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 1.4rem;
+    }
+
     .cart-summary-sticky-wrapper {
         position: fixed;
         bottom: 0;
         left: 0;
         right: 0;
         background: var(--card-bg);
-        box-shadow: 0 -10px 30px rgba(0,0,0,0.15);
-        padding: 1rem;
+        box-shadow: 0 -10px 40px rgba(0,0,0,0.3);
+        padding: 0.75rem 1rem 1.5rem;
         z-index: 1000;
+        border-radius: 24px 24px 0 0;
         border-top: 1px solid var(--border-color);
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
     }
 
+    .drag-handle {
+        width: 40px;
+        height: 4px;
+        background: var(--border-color);
+        border-radius: 2px;
+        margin: 0 auto 0.5rem;
+    }
+
     .cart-summary {
         margin-bottom: 0;
-        padding: 4px 0;
+        padding: 0;
         background: transparent;
     }
 
     .summary-line {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
 
     .nutrition-line {
@@ -748,14 +799,11 @@ body {
     }
 
     #checkoutBtn {
-        margin-top: 0;
+        margin-top: 0.25rem;
+        padding: 14px;
     }
 
     .app-main {
-        padding-bottom: 180px; /* Space for sticky cart */
-    }
-
-    .results-panel {
-        margin-bottom: 2rem;
+        padding-bottom: 200px;
     }
 }
