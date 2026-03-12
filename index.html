@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
@@ -46,15 +46,18 @@
                 <div class="empty-state">目前尚未選擇任何餐點</div>
             </div>
 
-            <div class="cart-summary">
-                <div class="summary-line">
-                    <span>原價：</span>
-                    <span id="originalPrice" class="strike-through">$0</span>
+            <div class="cart-summary-sticky-wrapper">
+                <div class="cart-summary">
+                    <div class="summary-line">
+                        <span>原價：</span>
+                        <span id="originalPrice" class="strike-through">$0</span>
+                    </div>
+                    <div class="summary-line nutrition-line">
+                        <span>熱量估計：</span>
+                        <span id="totalCalories">0 kcal</span>
+                    </div>
                 </div>
-                <div class="summary-line nutrition-line">
-                    <span>熱量估計：</span>
-                    <span id="totalCalories">0 kcal</span>
-                </div>
+                <button class="checkout-btn" id="checkoutBtn" disabled>確認下單 (目前僅供參考)</button>
             </div>
 
             <!-- New Coupons Panel -->

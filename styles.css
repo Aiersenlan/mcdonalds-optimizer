@@ -681,3 +681,81 @@ body {
 .config-row select:focus, .config-row input:focus {
     border-color: var(--m-red);
 }
+@media (max-width: 600px) {
+    .app-header {
+        padding: 1.5rem 1rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #themeToggleBtn {
+        position: static !important;
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    .tabs-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-label {
+        border-left: none;
+        padding: 10px 0;
+        justify-content: center;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .menu-item-card {
+        padding: 1rem;
+    }
+
+    .cart-summary-sticky-wrapper {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--card-bg);
+        box-shadow: 0 -10px 30px rgba(0,0,0,0.15);
+        padding: 1rem;
+        z-index: 1000;
+        border-top: 1px solid var(--border-color);
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .cart-summary {
+        margin-bottom: 0;
+        padding: 4px 0;
+        background: transparent;
+    }
+
+    .summary-line {
+        font-size: 0.9rem;
+    }
+
+    .nutrition-line {
+        border-top: none;
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    #checkoutBtn {
+        margin-top: 0;
+    }
+
+    .app-main {
+        padding-bottom: 180px; /* Space for sticky cart */
+    }
+
+    .results-panel {
+        margin-bottom: 2rem;
+    }
+}
