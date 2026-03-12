@@ -33,6 +33,18 @@ A high-performance web application designed to find the most cost-effective comb
 2. Open `index.html` in any browser | 開啟 `index.html` 即可使用。
 3. Add items to find your best strategy! | 加入餐點，即刻省錢！
 
+## 🌐 Deployment | 雲端佈署
+
+This project is a static site. To deploy on **Render**:
+1. Create a new **Static Site** on Render.
+2. Connect your GitHub repository.
+3. Render will use the included `render.yaml` automatically.
+
+本專案為純靜態網頁。若要佈署至 **Render**:
+1. 在 Render 上建立新的 **Static Site**。
+2. 連結您的 GitHub 檔案庫。
+3. Render 會自動讀取內附的 `render.yaml` 進行設定。
+
 ## 📸 Screenshots | 介面展示
 
 ![Calorie Tracking](./screenshots/calorie_tracking.png)

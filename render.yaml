@@ -1,0 +1,6 @@
+services:
+  - type: static
+    name: mcdonalds-optimizer
+    env: static
+    buildCommand: ""
+    publishPath: "."
