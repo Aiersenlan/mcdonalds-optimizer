@@ -3,7 +3,7 @@
 A high-performance web application designed to find the most cost-effective combination for McDonald's orders using dynamic programming. Specifically tuned for the 2026 Taiwan market.  
 這是一個高效能的 Web 應用程式，利用動態規劃（Dynamic Programming）演算法，為您的麥當勞訂單尋找最省錢的組合。特別針對 2026 台灣市場進行優化。
 
-![Premium UI](C:/Users/Aiersenlan_lab_PC/.gemini/antigravity/brain/5a0f071d-b6db-428a-af34-19b89eee5408/card_fix_final_1773342539614.png)
+![Premium UI](./screenshots/final_ui.png)
 
 ## ✨ Features | 功能亮點
 
@@ -13,7 +13,7 @@ A high-performance web application designed to find the most cost-effective comb
   完整整合甜心卡、1+1=$50/$69、APP 專屬優惠與隱藏酷碰。
 - **🔥 Turbo Engine | 渦輪性能**: Response time <10ms even for complex orders.  
   即便處理大型組合，運算速度依然維持在 10 毫秒以下。
-- **🥗 Nutrition Tracking | 熱量追蹤**: Real-time kcal summation for both cart and strategy.  
+- **🥗 Nutrition Tracking | 最省熱量追蹤**: Real-time kcal summation for both cart and strategy.  
   清單與點餐方案皆提供即時熱量（kcal）估計與統計。
 - **🌓 Dual Themes | 雙色主題**: Premium dark and light mode support with glassmorphism UI.  
   極致質感的深色/淺色模式切換，搭配毛玻璃視覺設計。
@@ -35,7 +35,7 @@ A high-performance web application designed to find the most cost-effective comb
 
 ## 📸 Screenshots | 介面展示
 
-![Calorie Tracking](C:/Users/Aiersenlan_lab_PC/.gemini/antigravity/brain/5a0f071d-b6db-428a-af34-19b89eee5408/calorie_tracking_proof_1773341764720.png)
+![Calorie Tracking](./screenshots/calorie_tracking.png)
 
 ## 📄 License
 
